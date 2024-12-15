@@ -27,20 +27,20 @@ export async function fetchChampions(): Promise<Champion[]> {
       `https://ddragon.leagueoflegends.com/cdn/${latestVersion}/data/ko_KR/champion.json`,
       {
         next: {
-          revalidate: 5,
+          revalidate: 86400,
         },
       }
     );
     if (!response.ok) throw new Error("fetchChampions error");
 
-    const data = await response.json();
-    return data.data;
+    const data: {data: Record<string, Champion>} = await response.json();
+    return Object.values(data.data);
   } catch (error: any) {
     console.error(error.message);
     throw error;
   }
 }
 
-export async function fetchChampionDetail(id: number) {
+export async function fetchChampionDetail(id: string) {
 
 }
