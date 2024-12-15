@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -6,12 +7,17 @@ interface ChampionCardProps {
 }
 const ChampionCard = ({champion} : ChampionCardProps) => {
   return (
-    <Link className='border rounded p-4 hover:shadow-lg' href={`/champions/`}>
-          <img />
-			<h2 className="mt-2 text-xl font-semibold">{champion.id}</h2>
-			<p className="text-gray-500">{champion.title}</p>
+    <Link className="border rounded p-4 hover:shadow-lg" href={`/champions/`}>
+      <Image
+        src={`https://ddragon.leagueoflegends.com/cdn/${champion.version}/img/champion/${champion.id}.png`}
+        alt={`${champion.id}.png`}
+        width="100"
+        height="100"
+      />
+      <h2 className="mt-2 text-xl font-semibold">{champion.name}</h2>
+      <p className="text-gray-500">{champion.title}</p>
     </Link>
-  )
+  );
 }
 
 export default ChampionCard
