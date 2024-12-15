@@ -1,4 +1,4 @@
-async function fetchLatestVersion(): Promise<string> {
+export async function fetchLatestVersion(): Promise<string> {
   try {
     const response: Response = await fetch(
       "https://ddragon.leagueoflegends.com/api/versions.json"

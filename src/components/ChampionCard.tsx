@@ -9,7 +9,7 @@ const ChampionCard = ({champion} : ChampionCardProps) => {
   return (
     <Link className="border rounded p-4 hover:shadow-lg" href={`/champions/${champion.id}`}>
       <Image
-        src={`https://ddragon.leagueoflegends.com/cdn/${champion.version}/img/champion/${champion.id}.png`}
+        src={`https://ddragon.leagueoflegends.com/cdn/${champion.version}/img/champion/${champion.image.full}`}
         alt={`${champion.id}.png`}
         width="100"
         height="100"

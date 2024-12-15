@@ -1,3 +1,5 @@
+"use client"
+
 import { fetchChampionRotation } from "../api/rotation/route"
 
 const RotationPage = () => {
