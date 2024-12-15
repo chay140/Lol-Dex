@@ -1,6 +1,9 @@
-import React from 'react'
+import { fetchChampionRotation } from "../api/rotation/route"
 
 const RotationPage = () => {
+
+  fetchChampionRotation();
+
   return (
     <div>
       RotationPage

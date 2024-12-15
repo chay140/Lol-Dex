@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { fetchChampions } from "../api/riotApi";
+import { fetchChampions } from "../../utils/serverApi";
 import ChampionCard from "@/components/ChampionCard";
 
 const ChampionsPage = () => {
@@ -21,7 +21,7 @@ const ChampionsPage = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">여기가 챔피언 목록</h1>
+      <h1 className="text-2xl font-bold mb-4">챔피언 목록</h1>
 
       {/* 매핑 */}
       <div className="grid grid-cols-4 gap4">

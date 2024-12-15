@@ -24,4 +24,9 @@ interface Champion {
   };
 }
 
-interface ChampionDetail {}
+interface ChampionDetail {
+
+
+}
+
+
