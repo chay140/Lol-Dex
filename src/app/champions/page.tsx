@@ -1,21 +1,8 @@
-"use client";
-
-import { useQuery } from "@tanstack/react-query";
 import { fetchChampions } from "../../utils/serverApi";
 import ChampionCard from "@/components/ChampionCard";
 
-const ChampionsPage = () => {
-  const {
-    data: champions,
-    isPending,
-    error,
-  } = useQuery<Champion[]>({
-    queryKey: ["champions"],
-    queryFn: fetchChampions,
-  });
-
-  if (isPending) return <div>로딩 중</div>
-  if (error) return <div>{error.message}</div>
+const ChampionsPage = async () => {
+  const champions = await fetchChampions();
 
   return (
     <div>

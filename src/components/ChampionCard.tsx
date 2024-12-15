@@ -7,7 +7,7 @@ interface ChampionCardProps {
 }
 const ChampionCard = ({champion} : ChampionCardProps) => {
   return (
-    <Link className="border rounded p-4 hover:shadow-lg" href={`/champions/`}>
+    <Link className="border rounded p-4 hover:shadow-lg" href={`/champions/${champion.id}`}>
       <Image
         src={`https://ddragon.leagueoflegends.com/cdn/${champion.version}/img/champion/${champion.id}.png`}
         alt={`${champion.id}.png`}

@@ -31,16 +31,38 @@ export async function fetchChampions(): Promise<Champion[]> {
         },
       }
     );
-    if (!response.ok) throw new Error("fetchChampions error");
 
-    const data: {data: Record<string, Champion>} = await response.json();
-    return Object.values(data.data);
+    if (!response.ok) {
+      const body = await response.json();
+      throw new Error(`fetchChampions: error [${body.status.message}]`);
+    }
+
+    const { data } = await response.json();
+    return Object.values(data);
   } catch (error: any) {
     console.error(error.message);
     throw error;
   }
 }
 
-export async function fetchChampionDetail(id: string) {
+export async function fetchChampionDetail(id: string): Promise<ChampionDetail> {
+  try {
+    const latestVersion = await fetchLatestVersion();
 
+    const response: Response = await fetch(
+      `https://ddragon.leagueoflegends.com/cdn/${latestVersion}/data/ko_KR/champion/${id}.json`,
+      { cache: "no-store" }
+    );
+
+    if (!response.ok) {
+      const body = await response.json();
+      throw new Error(`fetchChampionDetail: error [${body.status.message}]`);
+    }
+
+    const { data } = await response.json();
+    return data[id];
+  } catch (error: any) {
+    console.error(error.message);
+    throw error;
+  }
 }
