@@ -1,29 +1,32 @@
-export async function fetchChampionRotation(): Promise<ChampionRotation> {
+import { NextResponse } from "next/server";
+
+export async function GET() {
   try {
     const RIOT_API_KEY = process.env.NEXT_PUBLIC_RIOT_API_KEY;
 
-    if (!RIOT_API_KEY) throw new Error("fetchChampionRotation: No API key");
+    // API 키가 없는 경우
+    if (!RIOT_API_KEY) {
+      throw new Error(`fetchRotation error message: invalid API key`);
+    }
 
+    // 데이터 요청
     const response: Response = await fetch(
       `https://kr.api.riotgames.com/lol/platform/v3/champion-rotations`,
       {
-        method: "GET",
-        headers: {
-          "X-Riot-Token": RIOT_API_KEY,
-        },
+        headers: { "X-Riot-Token": RIOT_API_KEY as string },
       }
     );
 
-		if (!response.ok) {
-			// 에러 메세지 추출
-			const body = await response.json();
-      throw new Error(`fetchChampionRotation: response not okay [${body.status.message}]`);
-		}
-		
-		const data = await response.json();
-		return data;
+    if (!response.ok) {
+      const body = await response.json();
+      throw new Error(`fetchRotation error message: [${body.status.message}]`);
+    }
+
+    // 응답 데이터 변환
+    const data: ChampionRotation = await response.json();
+    return NextResponse.json(data, {status: 200});
   } catch (error: any) {
-		console.error(error.message);
-		throw error
+    console.error(error.message);
+    throw error;
   }
 }

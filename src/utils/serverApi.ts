@@ -1,3 +1,5 @@
+"use server";
+
 export async function fetchLatestVersion(): Promise<string> {
   try {
     const response: Response = await fetch(
@@ -6,10 +8,12 @@ export async function fetchLatestVersion(): Promise<string> {
 
     if (!response.ok) {
       const body = await response.json();
-      throw new Error(`fetchLatestVersion: error [${body.status.message}]`);
+      throw new Error(
+        `fetchLatestVersion error message: ${body.status.message}`
+      );
     }
 
-    const data = await response.json();
+    const data: string[] = await response.json();
 
     return data[0];
   } catch (error: any) {
@@ -19,7 +23,7 @@ export async function fetchLatestVersion(): Promise<string> {
   }
 }
 
-export async function fetchChampions(): Promise<Champion[]> {
+export async function fetchChampionList(): Promise<Champion[]> {
   try {
     const latestVersion = await fetchLatestVersion();
 
@@ -34,7 +38,7 @@ export async function fetchChampions(): Promise<Champion[]> {
 
     if (!response.ok) {
       const body = await response.json();
-      throw new Error(`fetchChampions: error [${body.status.message}]`);
+      throw new Error(`fetchChampions error message: ${body.status.message}`);
     }
 
     const { data } = await response.json();
@@ -49,6 +53,7 @@ export async function fetchChampionDetail(id: string): Promise<ChampionDetail> {
   try {
     const latestVersion = await fetchLatestVersion();
 
+    // console.log("API 호출 시간:", new Date().toISOString());
     const response: Response = await fetch(
       `https://ddragon.leagueoflegends.com/cdn/${latestVersion}/data/ko_KR/champion/${id}.json`,
       { cache: "no-store" }
@@ -56,7 +61,9 @@ export async function fetchChampionDetail(id: string): Promise<ChampionDetail> {
 
     if (!response.ok) {
       const body = await response.json();
-      throw new Error(`fetchChampionDetail: error [${body.status.message}]`);
+      throw new Error(
+        `fetchChampionDetail error message [${body.status.message}]`
+      );
     }
 
     const { data } = await response.json();
