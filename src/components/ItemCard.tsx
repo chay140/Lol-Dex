@@ -6,7 +6,7 @@ interface ItemCardProps {
 }
 const ItemCard = ({ item, version }: ItemCardProps) => {
   return (
-    <div className="flex flex-col items-center border rounded p-4 hover:shadow-lg">
+    <div className="flex flex-col items-center border border-black rounded p-4 hover:shadow-xl dark:border-white dark:shadow-gray-500">
       <Image
         src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${item.image.full}`}
         alt={`${item.name}`}

@@ -40,7 +40,7 @@ const ChampionDetailPage = async ({ params }: ChampDetailProps) => {
         />
       </div>
 
-      <div className="rounded-lg bg-[rgba(0,0,0,0.6)] p-8">
+      <div className="rounded-lg bg-[rgba(142,142,142,0.6)] dark:bg-[rgba(0,0,0,0.6)] p-8">
         <div className="flex flex-row gap-4 items-center">
           <Image
             className="object-cover mr-8 rounded-lg"
@@ -54,7 +54,7 @@ const ChampionDetailPage = async ({ params }: ChampDetailProps) => {
             {/* 챔피언 설명 */}
             <div className="max-w-3xl">
               <h1 className="text-4xl font-bold mb-4">{championDetail.name}</h1>
-              <h2 className="text-2xl text-gray-400 mb-4">
+              <h2 className="text-2xl text-gray-300 dark:text-gray-400 mb-4">
                 {championDetail.title}
               </h2>
               <p className="mt-4">{championDetail.lore}</p>

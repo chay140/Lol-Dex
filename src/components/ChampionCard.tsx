@@ -7,7 +7,7 @@ interface ChampionCardProps {
 const ChampionCard = ({ champion }: ChampionCardProps) => {
   return (
     <Link
-      className="flex flex-col items-center border rounded p-4 hover:shadow-lg text-center w-[195px] "
+      className="flex flex-col items-center border border-black rounded p-4 hover:shadow-xl text-center w-[195px] dark:border-white dark:shadow-gray-500"
       href={`/champions/${champion.id}`}
       scroll={true}
     >

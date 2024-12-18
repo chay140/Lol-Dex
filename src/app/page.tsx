@@ -18,7 +18,7 @@ export default async function Home() {
       <div className="mt-[40px] grid grid-cols-3 gap-10 h-full">
         <Link href="/champions" className="rounded p-4">
           <Image
-            className="object-cover"
+            className="object-cover rounded-lg"
             src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champ_one.id}_0.jpg`}
             alt={`${champ_one.id} loading image`}
             width={308}
@@ -31,7 +31,7 @@ export default async function Home() {
         </Link>
         <Link href="/items" className="rounded p-4 ">
           <Image
-            className="object-cover"
+            className="object-cover rounded-lg"
             src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champ_two.id}_0.jpg`}
             alt={`items loading image`}
             width={308}
@@ -44,7 +44,7 @@ export default async function Home() {
         </Link>
         <Link href="/rotation" className="rounded p-4 ">
           <Image
-            className="object-cover"
+            className="object-cover rounded-lg"
             src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champ_three.id}_0.jpg`}
             alt={`${champ_three.id} loading image`}
             width={308}
