@@ -6,6 +6,7 @@ export default async function Home() {
   const champ_one = await fetchRandomChampionDetail();
   const champ_two = await fetchRandomChampionDetail();
   const champ_three = await fetchRandomChampionDetail();
+
   return (
     <>
       <div className="text-center">
