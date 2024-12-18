@@ -25,6 +25,7 @@ const ChampionDetailPage = async ({ params }: ChampDetailProps) => {
   const championDetail = await fetchChampionDetail(params.id);
   const latestVersion = await fetchLatestVersion();
   const spellKeys = ["Q", "W", "E", "R"];
+  const statKeys = ["공격", "방어", "마법", "난이도"]
 
   return (
     <div className="mx-auto text-white">
@@ -41,7 +42,7 @@ const ChampionDetailPage = async ({ params }: ChampDetailProps) => {
       </div>
 
       <div className="rounded-lg bg-[rgba(142,142,142,0.6)] dark:bg-[rgba(0,0,0,0.6)] p-8">
-        <div className="flex flex-row gap-4 items-center">
+        <div className="flex flex-col md:flex-row gap-4 items-center ">
           <Image
             className="object-cover mr-8 rounded-lg"
             src={`${LOADING_URL}/${championDetail.id}_0.jpg`}
@@ -61,16 +62,16 @@ const ChampionDetailPage = async ({ params }: ChampDetailProps) => {
             </div>
 
             {/* 스탯 및 스킬 */}
-            <div className="flex flex-row">
+            <div className="flex flex-col min-[945px]:flex-row">
               {/* 스탯 부분 */}
-              <div className="mt-6 mr-8">
+              <div className="mt-6 mr-12">
                 <h2 className="text-2xl font-semibold mb-4">스탯</h2>
-                <ul className="list-disc list-inside">
-                  {Object.entries(championDetail.info).map(([key, value]) => {
-                    return (
-                      <li key={key}>{`${key.toUpperCase()}: ${value}`}</li>
-                    );
-                  })}
+                <ul className="list-none list-inside">
+                  {Object.entries(championDetail.info).map(
+                    ([key, value], i) => {
+                      return <li key={key}>{`${statKeys[i]}: ${value}`}</li>;
+                    }
+                  )}
                 </ul>
               </div>
 
