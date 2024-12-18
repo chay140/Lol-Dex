@@ -3,11 +3,6 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "League of Legends Dex",
-  description: "Riot Games API를 활용한 LoL 정보 앱",
-};
-
 export default async function Home() {
   const champ_one = await fetchRandomChampionDetail();
   const champ_two = await fetchRandomChampionDetail();

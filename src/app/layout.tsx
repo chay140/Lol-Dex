@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "League of Legends 정보 앱",
-  description: "롤 정보 제공 앱",
+  description: "Riot Games API를 활용한 LoL 정보 앱",
 };
 
 export default function RootLayout({

@@ -14,7 +14,6 @@ export async function generateMetadata({
   // fetch 데이터
   const data = await fetchChampionDetail(params.id);
 
-  // TODO: 더 추가할 정보 추가 바람
   return {
     title: `${data.name} - Lol Dex`,
     description: `${data.lore}`,
