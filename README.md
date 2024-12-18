@@ -1,4 +1,4 @@
-# 리그 오브 레전드 정보 앱앱
+# 리그 오브 레전드 정보 앱
 ![logo](/public/logo.png)
 
 ## 📖 목차
@@ -20,17 +20,26 @@
 
 ## 주요 기능  
 ### 챔피언 목록 확인 (ISR)  
-- **Incremental Static Regeneration** 방식을 사용하여 최신 챔피언 목록을 확인할 수 있습니다.  
+- **Incremental Static Regeneration** 방식을 사용하여 최신 챔피언 목록을 확인할 수 있습니다.
+![Champions](https://github.com/user-attachments/assets/8adc0e1e-a210-41ea-b3d8-dcf3235ff936)
+
 
 ### 챔피언 상세 보기 (SSR)  
-- **Server-Side Rendering**으로 선택한 챔피언의 상세 정보를 제공합니다.  
+- **Server-Side Rendering**으로 선택한 챔피언의 상세 정보를 제공합니다.
+![champion-detail-page-gif](https://github.com/user-attachments/assets/23e53561-1e45-4664-9f0a-71de41fa5a61)
+
 
 ### 아이템 목록 보기 (SSG)  
 - **Static-Site Generation**으로 아이템 목록을 빠르게 조회할 수 있습니다.  
+![Items](https://github.com/user-attachments/assets/b96a4ddd-449d-46d6-8f4d-f5893115a474)
 
 ### 로테이션 챔피언 목록 보기 (CSR)  
 - **Client-Side Rendering**을 통해 매주 변경되는 무료 챔피언 로테이션 목록을 실시간으로 확인할 수 있습니다.  
+![rotation-page gif](https://github.com/user-attachments/assets/ec69d18b-b50d-42ac-8d45-5b0ea1bb9d33)
 
+### 추가 기능
+- 로딩과 에러 페이지 구현으로 UX경험을 높였습니다.
+- 다크모드가 가능하도록 구현했습니다.
 
 ## 프로젝트 구성
 ```
