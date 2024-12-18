@@ -1,12 +1,16 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from "next/image";
+import Link from "next/link";
 
 interface ChampionCardProps {
-	champion: Champion
+  champion: Champion;
 }
-const ChampionCard = ({champion} : ChampionCardProps) => {
+const ChampionCard = ({ champion }: ChampionCardProps) => {
   return (
-    <Link className="border rounded p-4 hover:shadow-lg" href={`/champions/${champion.id}`}>
+    <Link
+      className="flex flex-col items-center border rounded p-4 hover:shadow-lg text-center w-[195px] "
+      href={`/champions/${champion.id}`}
+      scroll={true}
+    >
       <Image
         src={`https://ddragon.leagueoflegends.com/cdn/${champion.version}/img/champion/${champion.image.full}`}
         alt={`${champion.id}.png`}
@@ -17,6 +21,6 @@ const ChampionCard = ({champion} : ChampionCardProps) => {
       <p className="text-gray-500">{champion.title}</p>
     </Link>
   );
-}
+};
 
-export default ChampionCard
+export default ChampionCard;

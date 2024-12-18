@@ -1,5 +1,4 @@
 import { fetchRandomChampionDetail } from "@/utils/serverApi";
-import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,7 +15,7 @@ export default async function Home() {
         </p>
       </div>
       <div className="mt-[40px] grid grid-cols-3 gap-10 h-full">
-        <Link href="/champions" className="border rounded p-4">
+        <Link href="/champions" className="rounded p-4">
           <Image
             className="object-cover"
             src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champ_one.id}_0.jpg`}
@@ -29,7 +28,7 @@ export default async function Home() {
             챔피언
           </span>
         </Link>
-        <Link href="/items" className="border rounded p-4 ">
+        <Link href="/items" className="rounded p-4 ">
           <Image
             className="object-cover"
             src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champ_two.id}_0.jpg`}
@@ -42,7 +41,7 @@ export default async function Home() {
             아이템 목록
           </span>
         </Link>
-        <Link href="/rotation" className="border rounded p-4 ">
+        <Link href="/rotation" className="rounded p-4 ">
           <Image
             className="object-cover"
             src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champ_three.id}_0.jpg`}
