@@ -1,7 +1,7 @@
 "use client";
 
-import ChampionCard from "@/components/ChampionCard";
-import GridSkeleton from "@/components/ChampionGridSkeleton";
+import ChampionCard from "@/components/champions/ChampionCard";
+import GridSkeleton from "@/components/champions/ChampionGridSkeleton";
 import { getChampionRotation } from "@/utils/riotApi";
 import { delay } from "@/utils/utilConst";
 // CRS는 build && start

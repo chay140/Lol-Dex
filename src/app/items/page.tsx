@@ -1,4 +1,4 @@
-import ItemCard from "@/components/ItemCard";
+import ItemCard from "@/components/items/ItemCard";
 import { fetchItemList, fetchLatestVersion } from "@/utils/serverApi";
 import { Metadata } from "next";
 import React from "react";

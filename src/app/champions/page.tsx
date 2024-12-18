@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { fetchChampionList } from "../../utils/serverApi";
-import ChampionGrid from "@/components/ChampionGrid";
+import ChampionGrid from "@/components/champions/ChampionGrid";
 
 export const metadata: Metadata = {
   title: "챔피언 목록",
