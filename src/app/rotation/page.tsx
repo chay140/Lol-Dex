@@ -10,7 +10,7 @@ import { delay } from "@/utils/utilConst";
 import { useQuery } from "@tanstack/react-query";
 
 const delayedGetChampionRotation = async () => {
-  await delay(100); // 1.5초 딜레이 줘보기 (로딩 보여주기 용)
+  await delay(1000); // 1.5초 딜레이 줘보기 (로딩 보여주기 용)
   return getChampionRotation();
 };
 
