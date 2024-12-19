@@ -54,7 +54,8 @@ const RotationPage = () => {
           ))}
         </div>
       )}
-      <h1 className="text-2xl font-bold my-4">뉴비 챔피언 로테이션 Max Level.{!newbiePending && maxLevel}</h1>
+      <h1 className="text-2xl font-bold mt-4">뉴비 로테이션 </h1>
+      <p className="mb-4 text-gray-400">Max Level.{!newbiePending && maxLevel}</p>
       {newbiePending ? (
         <GridSkeleton />
       ) : (
