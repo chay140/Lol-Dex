@@ -15,7 +15,7 @@ export default async function Home() {
           Riot Games API를 활용하여 챔피언과 아이템 정보를 제공합니다.
         </p>
       </div>
-      <div className="mt-[40px] grid grid-cols-3 gap-10 h-full">
+      <div className="mt-[40px] grid grid-cols-1 md:grid-cols-3 gap-10 h-full">
         <Link href="/champions" className="rounded p-4">
           <Image
             className="object-cover rounded-lg"

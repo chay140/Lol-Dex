@@ -28,7 +28,7 @@ const ChampionDetailPage = async ({ params }: ChampDetailProps) => {
   const statKeys = ["공격", "방어", "마법", "난이도"]
 
   return (
-    <div className="mx-auto text-white">
+    <div className="md:mx-auto text-white items-center">
       {/* 챔피언 뒷배경 */}
       <div className="bg fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-[-10] ">
         <span className="dimmed absolute w-full h-full bg-[rgba(0,0,0,0.6)]"></span>
@@ -44,7 +44,7 @@ const ChampionDetailPage = async ({ params }: ChampDetailProps) => {
       <div className="rounded-lg bg-[rgba(142,142,142,0.6)] dark:bg-[rgba(0,0,0,0.6)] p-8">
         <div className="flex flex-col md:flex-row gap-4 items-center ">
           <Image
-            className="object-cover mr-8 rounded-lg"
+            className="object-cover md:mr-8 rounded-lg"
             src={`${LOADING_URL}/${championDetail.id}_0.jpg`}
             alt={`${championDetail.id} loading image`}
             width={308}
