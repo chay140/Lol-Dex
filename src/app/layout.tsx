@@ -4,6 +4,7 @@ import "./globals.css";
 import Providers from "./providers";
 import Link from "next/link";
 import ThemeProvider from "@/components/layout/ThemeToggle";
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,6 +36,7 @@ export default function RootLayout({
         <main className="flex min-h-screen flex-col items-center py-24 sm:px-24">
           <Providers> {children} </Providers>
         </main>
+        <Analytics />
       </body>
     </html>
   );
