@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
 interface ChampionCardProps {
@@ -11,9 +11,10 @@ const ChampionCard = ({ champion }: ChampionCardProps) => {
       href={`/champions/${champion.id}`}
       scroll={true}
     >
-      <Image
+      <img
         src={`https://ddragon.leagueoflegends.com/cdn/${champion.version}/img/champion/${champion.image.full}`}
         alt={`${champion.id}.png`}
+        loading="lazy"
         width="100"
         height="100"
       />

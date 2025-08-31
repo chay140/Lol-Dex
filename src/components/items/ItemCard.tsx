@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 
 interface ItemCardProps {
   item: Item;
@@ -7,9 +7,10 @@ interface ItemCardProps {
 const ItemCard = ({ item, version }: ItemCardProps) => {
   return (
     <div className="flex flex-col items-center border border-black rounded p-4 hover:shadow-xl dark:border-white dark:shadow-gray-500">
-      <Image
+      <img
         src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${item.image.full}`}
         alt={`${item.name}`}
+        loading="lazy"
         width="100"
         height="100"
       />

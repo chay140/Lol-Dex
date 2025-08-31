@@ -25,31 +25,33 @@ const ChampionDetailPage = async ({ params }: ChampDetailProps) => {
   const championDetail = await fetchChampionDetail(params.id);
   const latestVersion = await fetchLatestVersion();
   const spellKeys = ["Q", "W", "E", "R"];
-  const statKeys = ["공격", "방어", "마법", "난이도"]
+  const statKeys = ["공격", "방어", "마법", "난이도"];
 
   return (
     <div className="md:mx-auto text-white items-center">
       {/* 챔피언 뒷배경 */}
       <div className="bg fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-[-10] ">
         <span className="dimmed absolute w-full h-full bg-[rgba(0,0,0,0.6)]"></span>
-        <Image
+        <img
           className="min-w-full min-h-full object-cover blur-sm"
           src={`${SPLASH_URL}/${championDetail.id}_0.jpg`}
           alt={championDetail.id}
           width={500}
           height={500}
+          loading="lazy"
         />
       </div>
 
       <div className="rounded-lg bg-[rgba(142,142,142,0.6)] dark:bg-[rgba(0,0,0,0.6)] p-8">
         <div className="flex flex-col md:flex-row gap-4 items-center ">
-          <Image
+          <img
             className="object-cover md:mr-8 rounded-lg"
             src={`${LOADING_URL}/${championDetail.id}_0.jpg`}
             alt={`${championDetail.id} loading image`}
             width={308}
             height={560}
-            priority
+            loading="eager"
+            fetchPriority="high"
           />
           <div>
             {/* 챔피언 설명 */}
@@ -80,11 +82,12 @@ const ChampionDetailPage = async ({ params }: ChampDetailProps) => {
                 <h2 className="text-2xl font-semibold mb-4">스킬</h2>
                 <div className="flex flex-row gap-6">
                   <div className="relative group flex flex-col items-center cursor-pointer">
-                    <Image
+                    <img
                       src={`https://ddragon.leagueoflegends.com/cdn/${latestVersion}/img/passive/${championDetail.passive.image.full}`}
                       alt=""
                       width="50"
                       height="50"
+                      loading="lazy"
                       className="border my-4"
                     />
                     <h3 className="text-base font-semibold">{`[P]`}</h3>
@@ -106,11 +109,12 @@ const ChampionDetailPage = async ({ params }: ChampDetailProps) => {
                         key={spell.id}
                         className="relative group flex flex-col items-center cursor-pointer"
                       >
-                        <Image
+                        <img
                           src={`https://ddragon.leagueoflegends.com/cdn/${latestVersion}/img/spell/${spell.image.full}`}
-                          alt=""
+                          alt={`${spell.name}`}
                           width="50"
                           height="50"
+                          loading="lazy"
                           className="border my-4"
                         />
                         <h3 className="text-base font-semibold">{`[${spellKeys[i]}]`}</h3>
@@ -136,11 +140,12 @@ const ChampionDetailPage = async ({ params }: ChampDetailProps) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {championDetail.skins.map((skin) => (
               <div key={skin.num} className="flex flex-col items-center">
-                <Image
+                <img
                   src={`${LOADING_URL}/${championDetail.id}_${skin.num}.jpg`}
                   alt={skin.name}
                   width={250}
                   height={100}
+                  loading="lazy"
                   className="rounded-lg"
                 />
 

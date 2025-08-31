@@ -17,39 +17,42 @@ export default async function Home() {
       </div>
       <div className="mt-[40px] grid grid-cols-1 md:grid-cols-3 gap-10 h-full">
         <Link href="/champions" className="rounded p-4">
-          <Image
+          <img
             className="object-cover rounded-lg"
             src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champ_one.id}_0.jpg`}
             alt={`${champ_one.id} loading image`}
             width={308}
             height={560}
-            priority
+            loading="eager"
+            fetchPriority="high"
           />
           <span className="block text-center mt-2 text-lg font-semibold">
             챔피언
           </span>
         </Link>
         <Link href="/items" className="rounded p-4 ">
-          <Image
+          <img
             className="object-cover rounded-lg"
             src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champ_two.id}_0.jpg`}
             alt={`items loading image`}
             width={308}
             height={560}
-            priority
+            loading="eager"
+            fetchPriority="high"
           />
           <span className="block text-center mt-2 text-lg font-semibold">
             아이템 목록
           </span>
         </Link>
         <Link href="/rotation" className="rounded p-4 ">
-          <Image
+          <img
             className="object-cover rounded-lg"
             src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champ_three.id}_0.jpg`}
             alt={`${champ_three.id} loading image`}
             width={308}
             height={560}
-            priority
+            loading="eager"
+            fetchPriority="high"
           />
           <span className="block text-center mt-2 text-lg font-semibold">
             챔피언 로테이션
